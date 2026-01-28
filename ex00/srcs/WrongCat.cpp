@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 11:42:19 by gpollast          #+#    #+#             */
-/*   Updated: 2026/01/28 10:56:37 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/01/28 11:44:57 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
 #include <iostream>
 
-Cat::Cat(): Animal("Cat") {
-    std::cout << "[Cat] Constructor called\n";
+WrongCat::WrongCat(): WrongAnimal("WrongCat") {
+    std::cout << "[WrongCat] Constructor called\n";
 }
 
-Cat::Cat(const Cat& copy): Animal(copy) {
-    std::cout << "[Cat] Copy constructor called\n";
+WrongCat::WrongCat(const WrongCat& copy): WrongAnimal(copy) {
+    std::cout << "[WrongCat] Copy constructor called\n";
     *this = copy;
 }
 
-Cat&    Cat::operator=(const Cat& copy) {
-    std::cout << "[Cat] Copy assignment operator called\n";
+WrongCat&    WrongCat::operator=(const WrongCat& copy) {
+    std::cout << "[WrongCat] Copy assignment operator called\n";
     if (this != &copy)
-        Animal::operator=(copy);
+        WrongAnimal::operator=(copy);
     return (*this);
 }
 
-Cat::~Cat() {
-    std::cout << "[Cat] Destructor called\n";
+WrongCat::~WrongCat() {
+    std::cout << "[WrongCat] Destructor called\n";
 }
 
-void    Cat::makeSound() const {
-    std::cout << Animal::_type << ": Meow Meoooow !\n";
+void    WrongCat::makeSound() const {
+    std::cout << WrongAnimal::_type << ": Meow Meoooow !\n";
 }

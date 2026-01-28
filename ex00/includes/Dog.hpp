@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 12:48:40 by gpollast          #+#    #+#             */
-/*   Updated: 2026/01/27 13:27:52 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/01/28 10:54:25 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ public:
     Dog& operator=(const Dog& copy);
     ~Dog();
 
-    void makeSound();
+    void makeSound() const;
 };

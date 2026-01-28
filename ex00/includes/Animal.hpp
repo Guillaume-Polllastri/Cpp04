@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 11:05:02 by gpollast          #+#    #+#             */
-/*   Updated: 2026/01/27 14:47:45 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/01/28 10:53:56 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ public:
     Animal& operator=(const Animal& copy);
     virtual ~Animal();
 
-    virtual void makeSound();
+    virtual void 	makeSound() const;
+	std::string		getType() const;
 };

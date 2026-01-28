@@ -6,7 +6,7 @@
 #    By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/18 11:36:06 by gpollast          #+#    #+#              #
-#    Updated: 2026/01/27 14:02:46 by gpollast         ###   ########.fr        #
+#    Updated: 2026/01/28 11:45:43 by gpollast         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,9 @@ NAME = Polymorphism
 SRCS =	srcs/main.cpp \
 		srcs/Animal.cpp \
 		srcs/Dog.cpp \
-		srcs/Cat.cpp
+		srcs/Cat.cpp \
+		srcs/WrongAnimal.cpp \
+		srcs/WrongCat.cpp
 
 C++ = c++
 C++_FLAGS = -Wall -Wextra -Werror -std=c++98 -I./includes -g

@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 12:58:50 by gpollast          #+#    #+#             */
-/*   Updated: 2026/01/27 13:43:16 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/01/28 10:54:35 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ Dog::~Dog() {
     std::cout << "[Dog] Destructor called\n";
 }
 
-void    Dog::makeSound() {
+void    Dog::makeSound() const {
     std::cout << Animal::_type << ": WOOF WOOOOF !\n";
 }

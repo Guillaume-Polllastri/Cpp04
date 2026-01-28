@@ -6,14 +6,14 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 11:17:34 by gpollast          #+#    #+#             */
-/*   Updated: 2026/01/27 14:39:26 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/01/28 10:57:29 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include <iostream>
 
-Animal::Animal(): _type("unknown") {
+Animal::Animal(): _type("Unknown") {
     std::cout << "[Animal] Constructor called\n";
 }
 
@@ -37,6 +37,10 @@ Animal::~Animal() {
     std::cout << "[Animal] Destructor called\n";
 }
 
-void    Animal::makeSound() {
+void    Animal::makeSound() const {
     std::cout << _type << ": Akikikikikikiii !\n";
+}
+
+std::string	Animal::getType() const {
+	return (_type);
 }
