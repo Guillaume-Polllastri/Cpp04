@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 12:58:50 by gpollast          #+#    #+#             */
-/*   Updated: 2026/01/28 10:54:35 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/01/28 18:13:49 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ Dog::Dog(): Animal("Dog") {
 
 Dog::Dog(const Dog& copy): Animal(copy) {
     std::cout << "[Dog] Copy constructor called\n";
-    *this = copy;
 }
 
 Dog&    Dog::operator=(const Dog& copy) {
