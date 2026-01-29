@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 17:44:57 by gpollast          #+#    #+#             */
-/*   Updated: 2026/01/28 18:29:39 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/01/28 19:57:55 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,15 @@ Brain&	Brain::operator=(const Brain& other) {
 
 Brain::~Brain() {
     std::cout << "[Brain] Destructor called\n";
+}
+
+void	Brain::setIdea(int index, std::string idea) {
+	if (index >= 0 && index < 100)
+		_ideas[index] = idea;
+}
+
+std::string	Brain::getIdea(int index) {
+	if (index >= 0 && index < 100)
+		return (_ideas[index]);
+	return (NULL);
 }

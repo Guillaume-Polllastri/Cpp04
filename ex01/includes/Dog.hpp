@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 12:48:40 by gpollast          #+#    #+#             */
-/*   Updated: 2026/01/28 18:30:59 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/01/28 19:35:07 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ private:
 public:
     Dog();
     Dog(const Dog& copy);
-    Dog& operator=(const Dog& copy);
+    Dog& operator=(const Dog& other);
     ~Dog();
 
     void makeSound() const;

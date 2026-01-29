@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 11:17:34 by gpollast          #+#    #+#             */
-/*   Updated: 2026/01/28 10:57:29 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/01/28 19:57:44 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ Animal::Animal(const Animal& copy) {
     *this = copy;
 }
 
-Animal& Animal::operator=(const Animal& copy) {
+Animal& Animal::operator=(const Animal& other) {
     std::cout << "[Animal] Copy assignment operator called\n";
-    if (this != &copy)
-        this->_type = copy._type;
+    if (this != &other)
+        this->_type = other._type;
     return *this;
 }
 
