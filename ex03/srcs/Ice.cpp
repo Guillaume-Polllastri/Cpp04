@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/29 11:47:03 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/05 10:30:48 by gpollast         ###   ########.fr       */
+/*   Created: 2026/02/05 10:12:12 by gpollast          #+#    #+#             */
+/*   Updated: 2026/02/05 11:13:08 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Ice.hpp"
 
-#include <string>
+Ice::Ice(): AMateria("ice") {
+}
 
-class AMateria
-{
-	protected:
-	std::string	_type;
-	
-	public:
-	AMateria(std::string const& type);
-	AMateria(const AMateria& copy);
-	AMateria&	operator=(const AMateria& other);
-	~AMateria();
-	
-	std::string const & getType() const; //Returns the materia type
-	virtual AMateria* clone() const = 0;
-	// virtual void use(ICharacter& target);
-};
+Ice::Ice(const Ice& copy): AMateria(copy) {
+}
+
+Ice&	Ice::operator=(const Ice& other) {
+	if (this != &other)
+		AMateria::operator=(other);
+	return *this;
+}
+
+Ice::~Ice() {
+}
+
+AMateria* Ice::clone() const {
+	return new Ice(*this);
+}

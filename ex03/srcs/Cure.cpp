@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/29 11:47:03 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/05 10:30:48 by gpollast         ###   ########.fr       */
+/*   Created: 2026/02/05 11:14:59 by gpollast          #+#    #+#             */
+/*   Updated: 2026/02/05 11:18:18 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Cure.hpp"
 
-#include <string>
+Cure::Cure(): AMateria("cure") {
+}
 
-class AMateria
-{
-	protected:
-	std::string	_type;
-	
-	public:
-	AMateria(std::string const& type);
-	AMateria(const AMateria& copy);
-	AMateria&	operator=(const AMateria& other);
-	~AMateria();
-	
-	std::string const & getType() const; //Returns the materia type
-	virtual AMateria* clone() const = 0;
-	// virtual void use(ICharacter& target);
-};
+Cure::Cure(const Cure& copy): AMateria(copy) {
+}
+
+Cure&	Cure::operator=(const Cure& other) {
+	if (this != &other)
+		AMateria::operator=(other);
+	return *this;
+}
+
+Cure::~Cure() {
+}
+
+AMateria*	Cure::clone() const {
+	return new Cure(*this);
+}
