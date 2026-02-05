@@ -6,11 +6,13 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 11:14:59 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/05 11:18:18 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/05 13:27:37 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
+
+#include <iostream>
 
 Cure::Cure(): AMateria("cure") {
 }
@@ -29,4 +31,8 @@ Cure::~Cure() {
 
 AMateria*	Cure::clone() const {
 	return new Cure(*this);
+}
+
+void	Cure::use(ICharacter& target) {
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

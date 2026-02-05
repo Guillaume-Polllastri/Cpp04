@@ -6,11 +6,13 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 10:12:12 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/05 11:13:08 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/05 13:30:56 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
+
+#include <iostream>
 
 Ice::Ice(): AMateria("ice") {
 }
@@ -29,4 +31,8 @@ Ice::~Ice() {
 
 AMateria* Ice::clone() const {
 	return new Ice(*this);
+}
+
+void	Ice::use(ICharacter& target) {
+	std::cout << "* heals " << target.getName() << "’s wounds *";
 }

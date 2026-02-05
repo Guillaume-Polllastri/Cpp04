@@ -6,13 +6,14 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 10:10:07 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/05 11:14:46 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/05 14:00:41 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 #include <string>
 
 class Ice: public AMateria
@@ -24,4 +25,5 @@ class Ice: public AMateria
 	~Ice();
 
 	virtual AMateria* clone() const;
-}
+	virtual void use(ICharacter& target);
+};

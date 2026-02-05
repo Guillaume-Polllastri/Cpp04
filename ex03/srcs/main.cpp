@@ -6,11 +6,14 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 18:47:09 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/05 10:44:21 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/05 11:20:17 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+#include "Cure.hpp"
+#include "Ice.hpp"
+#include "ICharacter.hpp"
 
 #include <iostream>
 
