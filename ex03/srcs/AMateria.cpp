@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 11:48:32 by gpollast          #+#    #+#             */
-/*   Updated: 2026/01/29 18:46:37 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/06 18:54:40 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,8 @@ AMateria::~AMateria() {
 
 std::string const& AMateria::getType() const {
 	return this->_type;
+}
+
+void	AMateria::use(ICharacter& target) {
+	(void) target;
 }
