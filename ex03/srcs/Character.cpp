@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 14:08:51 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/05 20:48:08 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/06 13:00:23 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,39 @@ Character::~Character() {
 		clearFloor();
 }
 
+AMateria*	Character::Floor::getMateria() const {
+	return (this->materia);
+}
+
+Character::Floor*	Character::Floor::getNext() const {
+	return (this->next);
+}
+
+void	Character::clearFloor(Floor* head) {
+	if (head == nullptr)
+		return ;
+	Floor* tmp = head->getNext();
+	delete head;
+	clearFloor(tmp);
+}
+
 void	Character::addToFloor(AMateria* materia) {
 	_FLOOR = new Floor(materia, _FLOOR);
 }
 
-void	Character::removeFromFloor(AMateria* materia) {
-	
+Character::Floor*	Character::removeFromFloor(AMateria* materia, Floor* head) {
+	if (head == nullptr)
+		return head;
+	if (materia == head->getMateria())
+	{
+		Floor*	tmp = head->getNext();
+		delete head;
+		return tmp;
+	}
+	head = head->getNext();
+	removeFromFloor(materia, head);
+	return head;
 }
-
 
 std::string const& Character::getName() const {
 	return this->_name;
