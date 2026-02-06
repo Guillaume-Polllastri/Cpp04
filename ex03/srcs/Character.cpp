@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 14:08:51 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/05 19:46:13 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/05 20:48:08 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,15 @@ Character::~Character() {
 		clearFloor();
 }
 
+void	Character::addToFloor(AMateria* materia) {
+	_FLOOR = new Floor(materia, _FLOOR);
+}
+
+void	Character::removeFromFloor(AMateria* materia) {
+	
+}
+
+
 std::string const& Character::getName() const {
 	return this->_name;
 }
@@ -74,5 +83,22 @@ void Character::equip(AMateria* m) {
 			return ;
 		}
 	}
-	std::cout << '[' << this->_name << ']' << " Your inventory is full !" << std::endl;
+	std::cout << '[' << this->_name << "] " << "Your inventory is full !" << std::endl;
+}
+
+void Character::unequip(int idx) {
+	if (idx < 0 || idx > 3)
+	{
+		std::cout << '[' << this->_name << "] " << "The slot index is wrong !" << std::endl;
+		return ;
+	}
+}
+
+void Character::use(int idx, ICharacter& target) {
+	if (idx < 0 || idx > 3)
+	{
+		std::cout << '[' << this->_name << "] " << "The slot index is wrong !" << std::endl;
+		return ;
+	}
+	_inventory[idx]->use(target);
 }

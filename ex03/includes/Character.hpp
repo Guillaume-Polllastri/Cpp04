@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 13:59:40 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/05 19:30:11 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/05 20:45:27 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,16 @@ class Character: public ICharacter
 	{
 		AMateria*	materia;
 		Floor*		next;
+
+		public:
+		Floor(AMateria* m, Floor* n): materia(m), next(n) {}
 	};
 	static Floor* _FLOOR;
 	static int		NB_CHARACTERS;
+
 	static void		clearFloor();
+	void			addToFloor(AMateria* materia);
+	void			removeFromFloor(AMateria* materia);
 	
 	public:
 	Character(std::string name);
