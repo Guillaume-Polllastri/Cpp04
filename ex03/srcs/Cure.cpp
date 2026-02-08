@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 11:14:59 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/05 13:27:37 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/08 20:51:31 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ AMateria*	Cure::clone() const {
 }
 
 void	Cure::use(ICharacter& target) {
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }

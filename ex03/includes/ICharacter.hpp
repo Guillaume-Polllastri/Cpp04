@@ -6,14 +6,15 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 19:40:14 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/01 19:41:14 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/08 18:48:53 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <string>
-#include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter
 {

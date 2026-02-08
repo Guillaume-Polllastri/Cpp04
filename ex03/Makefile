@@ -6,14 +6,18 @@
 #    By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/18 11:36:06 by gpollast          #+#    #+#              #
-#    Updated: 2026/01/29 11:45:39 by gpollast         ###   ########.fr        #
+#    Updated: 2026/02/08 21:00:20 by gpollast         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Interface
 
 SRCS =	srcs/main.cpp \
-		srcs/AMateria.cpp
+		srcs/AMateria.cpp \
+		srcs/Character.cpp \
+		srcs/Cure.cpp \
+		srcs/Ice.cpp \
+		srcs/MateriaSource.cpp
 
 C++ = c++
 C++_FLAGS = -Wall -Wextra -Werror -std=c++98 -I./includes -g
@@ -38,4 +42,7 @@ fclean : clean
 
 re : fclean all
 
-.PHONY: all clean fclean re
+val:
+	valgrind --trace-children=yes --leak-check=full --track-origins=yes --track-fds=yes --show-leak-kinds=all ./$(NAME) $(ARGS) || true
+
+.PHONY: all clean fclean re val

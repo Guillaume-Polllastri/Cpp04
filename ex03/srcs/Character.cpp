@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 14:08:51 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/06 13:00:23 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/08 23:39:24 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <iostream>
 
 int Character::NB_CHARACTERS = 0;
-Character::Floor*	Character::_FLOOR = nullptr;
+Character::Floor*	Character::_FLOOR = NULL;
 
 Character::Character(std::string name): _name(name), _inventory() {
 	NB_CHARACTERS++;
@@ -57,8 +57,10 @@ Character::~Character() {
 			delete this->_inventory[i];
 	}
 	if (NB_CHARACTERS <= 0)
-		clearFloor();
+		clearFloor(_FLOOR);
 }
+
+// Fore the linked list
 
 AMateria*	Character::Floor::getMateria() const {
 	return (this->materia);
@@ -69,7 +71,7 @@ Character::Floor*	Character::Floor::getNext() const {
 }
 
 void	Character::clearFloor(Floor* head) {
-	if (head == nullptr)
+	if (head == NULL)
 		return ;
 	Floor* tmp = head->getNext();
 	delete head;
@@ -81,7 +83,7 @@ void	Character::addToFloor(AMateria* materia) {
 }
 
 Character::Floor*	Character::removeFromFloor(AMateria* materia, Floor* head) {
-	if (head == nullptr)
+	if (head == NULL)
 		return head;
 	if (materia == head->getMateria())
 	{
@@ -93,6 +95,8 @@ Character::Floor*	Character::removeFromFloor(AMateria* materia, Floor* head) {
 	removeFromFloor(materia, head);
 	return head;
 }
+
+//public methods of Character 
 
 std::string const& Character::getName() const {
 	return this->_name;
@@ -117,6 +121,14 @@ void Character::unequip(int idx) {
 		std::cout << '[' << this->_name << "] " << "The slot index is wrong !" << std::endl;
 		return ;
 	}
+	if (!_inventory[idx])
+    {
+        std::cout << '[' << this->_name << "] " << "This slot is already empty !" << std::endl;
+        return ;
+    }
+	std::cout << '[' << this->_name << "] " << _inventory[idx]->getType() << " materia is unequiped in the slot " << idx << std::endl;
+	addToFloor(this->_inventory[idx]);
+	_inventory[idx] = NULL;
 }
 
 void Character::use(int idx, ICharacter& target) {
@@ -125,5 +137,6 @@ void Character::use(int idx, ICharacter& target) {
 		std::cout << '[' << this->_name << "] " << "The slot index is wrong !" << std::endl;
 		return ;
 	}
-	_inventory[idx]->use(target);
+	if (_inventory[idx])
+		_inventory[idx]->use(target);
 }
