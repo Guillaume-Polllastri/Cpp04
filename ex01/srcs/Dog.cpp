@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 12:58:50 by gpollast          #+#    #+#             */
-/*   Updated: 2026/01/29 10:30:36 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/09 11:51:58 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 #include <iostream>
 
 Dog::Dog(): Animal("Dog") {
-    std::cout << "[Dog] Constructor called\n";
+    // std::cout << "[Dog] Constructor called\n";
 	_brain = new Brain();
 }
 
 Dog::Dog(const Dog& copy): Animal(copy), _brain(new Brain(*copy._brain)) {
-    std::cout << "[Dog] Copy constructor called\n";
+    // std::cout << "[Dog] Copy constructor called\n";
 }
 
 Dog&    Dog::operator=(const Dog& other) {
-    std::cout << "[Dog] Copy assignment operator called\n";
+    // std::cout << "[Dog] Copy assignment operator called\n";
     if (this != &other)
 	{
         Animal::operator=(other);
@@ -35,7 +35,7 @@ Dog&    Dog::operator=(const Dog& other) {
 }
 
 Dog::~Dog() {
-    std::cout << "[Dog] Destructor called\n";
+    // std::cout << "[Dog] Destructor called\n";
 	delete _brain;
 }
 

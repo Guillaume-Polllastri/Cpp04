@@ -6,7 +6,7 @@
 #    By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/18 11:36:06 by gpollast          #+#    #+#              #
-#    Updated: 2026/01/29 10:02:26 by gpollast         ###   ########.fr        #
+#    Updated: 2026/02/09 11:01:31 by gpollast         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,4 +41,7 @@ fclean : clean
 
 re : fclean all
 
-.PHONY: all clean fclean re
+val:
+	valgrind --trace-children=yes --leak-check=full --track-origins=yes --track-fds=yes --show-leak-kinds=all ./$(NAME) $(ARGS) || true
+
+.PHONY: all clean fclean re val
